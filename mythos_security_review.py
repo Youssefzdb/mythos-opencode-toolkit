@@ -225,8 +225,9 @@ def execution_pass(verified, max_exec):
 def chain_pass(server, session_id, verified):
     if len(verified) < 2:
         return []
-    summary = [{"title": f.get("title"), "file": f["_file"], "severity": f.get("final_severity"),
-                "explanation": f.get("explanation")} for f in verified]
+    summary = [{"title": f.get("title"), "file": f.get("_file", f.get("url", "web-target")),
+                "severity": f.get("final_severity"),
+                "explanation": f.get("explanation", f.get("attack_scenario", ""))} for f in verified]
     prompt = CHAIN_PROMPT.format(findings=str(summary))
     resp = server.ask(session_id, HYPOTHESIS_MODEL, "mythos", prompt)
     return extract_json(resp) or []
