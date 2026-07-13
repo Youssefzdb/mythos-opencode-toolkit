@@ -1,0 +1,20 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/mimo-v2.5-free",
+  "agent": {
+    "mythos": {
+      "description": "Elite offensive-security / pentesting assistant, aliased as Mythos, running on the free OpenCode Zen model (MiMo-V2.5 Free). For authorized security testing and research only. Sole active agent — handles all roles (build/plan/explore/general) itself.",
+      "mode": "primary",
+      "model": "opencode/mimo-v2.5-free",
+      "prompt": "{file:./prompts/mythos.txt}",
+      "permission": {
+        "edit": "allow",
+        "bash": "allow"
+      }
+    },
+    "build": { "disable": true },
+    "plan": { "disable": true },
+    "explore": { "disable": true },
+    "general": { "disable": true }
+  }
+}
