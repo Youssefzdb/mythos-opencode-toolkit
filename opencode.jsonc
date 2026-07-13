@@ -3,7 +3,7 @@
   "model": "opencode/mimo-v2.5-free",
   "agent": {
     "mythos": {
-      "description": "Elite offensive-security / pentesting assistant, aliased as Mythos, running on the free OpenCode Zen model (MiMo-V2.5 Free). For authorized security testing and research only. Sole active agent — handles all roles (build/plan/explore/general) itself.",
+      "description": "Elite offensive-security / pentesting assistant, aliased as Mythos, running on the free OpenCode Zen model (MiMo-V2.5 Free). For authorized security testing and research only. Sole active agent — handles all roles (build/plan/explore/general/recon/exploit/cipher/phantom) itself.",
       "mode": "primary",
       "model": "opencode/mimo-v2.5-free",
       "prompt": "{file:./prompts/mythos.txt}",
@@ -15,6 +15,10 @@
     "build": { "disable": true },
     "plan": { "disable": true },
     "explore": { "disable": true },
-    "general": { "disable": true }
+    "general": { "disable": true },
+    "cipher": { "disable": true },
+    "exploit": { "disable": true },
+    "phantom": { "disable": true },
+    "recon": { "disable": true }
   }
 }
